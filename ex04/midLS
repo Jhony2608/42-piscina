@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for item in $(ls -1t); do
+  if [ -d "$item" ]; then
+    echo -n  "${item}/, "
+  else
+    echo -n  "${item}, "
+  fi
+done | sed 's/, $/\n/'
+
